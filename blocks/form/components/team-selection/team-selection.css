@@ -32,7 +32,19 @@
 
 .team-selection .checkbox-wrapper input[type="checkbox"],
 .team-selection .checkbox-wrapper input[type="radio"] {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.team-selection .checkbox-wrapper:has(input:checked) {
+  border-color: #007bff;
+  background-color: #f8f9ff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
 }
 
 .team-selection .checkbox-wrapper picture {
