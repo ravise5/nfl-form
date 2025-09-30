@@ -74,7 +74,8 @@
       "text-input",
       "tnc",
       "wizard",
-      "range"
+      "range",
+      "team-selection"
     ]
 >>>>>>> 6b942c0 (Initial commit)
   }

@@ -689,6 +689,92 @@
               }
             }
           }
+        },
+        {
+          "title": "Team selection",
+          "id": "team-selection",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
+                "template": {
+                  "jcr:title": "Team selection",
+                  "fieldType": "checkbox-group",
+                  "enum": [
+                    "/content/dam/nfl/logos/arizona-cardinals.svg",
+                    "/content/dam/nfl/logos/atlanta-falcons.svg",
+                    "/content/dam/nfl/logos/baltimore-ravens.svg",
+                    "/content/dam/nfl/logos/buffalo-bills.svg",
+                    "/content/dam/nfl/logos/carolina-panthers.svg",
+                    "/content/dam/nfl/logos/chicago-bears.svg",
+                    "/content/dam/nfl/logos/cincinnati-bengals.svg",
+                    "/content/dam/nfl/logos/cleveland-browns.svg",
+                    "/content/dam/nfl/logos/dallas-cowboys.svg",
+                    "/content/dam/nfl/logos/denver-broncos.svg",
+                    "/content/dam/nfl/logos/detroit-lions.svg",
+                    "/content/dam/nfl/logos/green-bay-packers.svg",
+                    "/content/dam/nfl/logos/houston-texans.svg",
+                    "/content/dam/nfl/logos/indianapolis-colts.svg",
+                    "/content/dam/nfl/logos/jacksonville-jaguars.svg",
+                    "/content/dam/nfl/logos/kansas-city-chiefs.svg",
+                    "/content/dam/nfl/logos/las-vegas-raiders.svg",
+                    "/content/dam/nfl/logos/los-angeles-chargers.svg",
+                    "/content/dam/nfl/logos/los-angeles-rams.svg",
+                    "/content/dam/nfl/logos/miami-dolphins.svg",
+                    "/content/dam/nfl/logos/minnesota-vikings.svg",
+                    "/content/dam/nfl/logos/new-england-patriots.svg",
+                    "/content/dam/nfl/logos/new-orleans-saints.svg",
+                    "/content/dam/nfl/logos/new-york-giants.svg",
+                    "/content/dam/nfl/logos/new-york-jets.svg",
+                    "/content/dam/nfl/logos/philadelphia-eagles.svg",
+                    "/content/dam/nfl/logos/pittsburgh-steelers.svg",
+                    "/content/dam/nfl/logos/san-francisco-49ers.svg",
+                    "/content/dam/nfl/logos/seattle-seahawks.svg",
+                    "/content/dam/nfl/logos/tampa-bay-buccaneers.svg",
+                    "/content/dam/nfl/logos/tennessee-titans.svg",
+                    "/content/dam/nfl/logos/washington-commanders.svg"
+                  ],
+                  "enumNames": [
+                    "Arizona Cardinals",
+                    "Atlanta Falcons",
+                    "Baltimore Ravens",
+                    "Buffalo Bills",
+                    "Carolina Panthers",
+                    "Chicago Bears",
+                    "Cincinnati Bengals",
+                    "Cleveland Browns",
+                    "Dallas Cowboys",
+                    "Denver Broncos",
+                    "Detroit Lions",
+                    "Green Bay Packers",
+                    "Houston Texans",
+                    "Indianapolis Colts",
+                    "Jacksonville Jaguars",
+                    "Kansas City Chiefs",
+                    "Las Vegas Raiders",
+                    "Los Angeles Chargers",
+                    "Los Angeles Rams",
+                    "Miami Dolphins",
+                    "Minnesota Vikings",
+                    "New England Patriots",
+                    "New Orleans Saints",
+                    "New York Giants",
+                    "New York Jets",
+                    "Philadelphia Eagles",
+                    "Pittsburgh Steelers",
+                    "San Francisco 49ers",
+                    "Seattle Seahawks",
+                    "Tampa Bay Buccaneers",
+                    "Tennessee Titans",
+                    "Washington Commanders"
+                  ],
+                  "orientation": "horizontal",
+                  "type": "string[]",
+                  "fd:viewType": "team-selection"
+                }
+              }
+            }
+          }
         }
       ]
 >>>>>>> 6b942c0 (Initial commit)
