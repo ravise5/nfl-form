@@ -1,20 +1,31 @@
-/**
- * Custom team-selection component
- * Based on: Checkbox Group
- */
+import { createOptimizedPicture } from '../../../../scripts/aem.js';
 
 /**
  * Decorates a custom form field component
- * @param {HTMLElement} fieldDiv - The DOM element containing the field wrapper. Refer to the documentation for its structure for each component.
+ * @param {HTMLElement} element - The DOM element containing the field wrapper.
  * @param {Object} fieldJson - The form json object for the component.
  * @param {HTMLElement} parentElement - The parent element of the field.
  * @param {string} formId - The unique identifier of the form.
  */
-export default async function decorate(fieldDiv, fieldJson, parentElement, formId) {
-  console.log('⚙️ Decorating team-selection component:', fieldDiv, fieldJson, parentElement, formId);
-  
-  // TODO: Implement your custom component logic here
-  // You can access the field properties via fieldJson.properties
-  
-  return fieldDiv;
+export default async function decorate(element, fieldJson, parentElement, formId) {
+  const { enum: imagePaths, enumNames } = fieldJson;
+  const { selectionType } = fieldJson.properties;
+
+  element.classList.add('team-selection');
+
+  // single or multi selection
+  if (selectionType === 'single') {
+    element.querySelectorAll('input').forEach((input) => {
+      input.type = 'radio';
+    });
+  } else if (selectionType === 'multi') {
+    element.querySelectorAll('input').forEach((input) => {
+      input.type = 'checkbox';
+    });
+  }
+
+  element.querySelectorAll('.checkbox-wrapper').forEach((wrapper, index) => {
+    const image = createOptimizedPicture(imagePaths[index], enumNames[index]);
+    wrapper.appendChild(image);
+  });
 }
