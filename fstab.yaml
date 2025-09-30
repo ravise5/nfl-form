@@ -1,0 +1,5 @@
+mountpoints:
+  /:
+    url: https://author-p133911-e1313536.adobeaemcloud.com/bin/franklin.delivery/ravise5/nfl-form/main
+    type: "markup"
+    suffix: ".html"
