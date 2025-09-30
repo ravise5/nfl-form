@@ -8,7 +8,7 @@ import { createOptimizedPicture } from '../../../../scripts/aem.js';
  * @param {string} formId - The unique identifier of the form.
  */
 export default async function decorate(element, fieldJson, parentElement, formId) {
-  const { enum: imagePaths, enumNames } = fieldJson;
+  const { enumNames: imagePaths, enum: altText } = fieldJson;
   const { selectionType } = fieldJson.properties;
 
   element.classList.add('team-selection');
@@ -25,7 +25,7 @@ export default async function decorate(element, fieldJson, parentElement, formId
   }
 
   element.querySelectorAll('.checkbox-wrapper').forEach((wrapper, index) => {
-    const image = createOptimizedPicture(imagePaths[index], enumNames[index]);
+    const image = createOptimizedPicture(imagePaths[index], altText[index]);
     wrapper.appendChild(image);
   });
 }
