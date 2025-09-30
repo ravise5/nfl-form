@@ -1,2 +1,97 @@
 /* Team-selection component styles */
-  /* Add your custom styles here */
+.team-selection {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 16px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.team-selection .checkbox-wrapper {
+  position: relative;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-selection .checkbox-wrapper:hover {
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.team-selection .checkbox-wrapper input[type="checkbox"],
+.team-selection .checkbox-wrapper input[type="radio"] {
+  display: none;
+}
+
+.team-selection .checkbox-wrapper picture {
+  width: 100%;
+  height: 60px;
+  display: block;
+  margin-bottom: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.team-selection .checkbox-wrapper picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.team-selection .checkbox-wrapper label {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .team-selection {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .team-selection {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .team-selection {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .team-selection .checkbox-wrapper {
+    min-height: 100px;
+    padding: 12px;
+  }
+  
+  .team-selection .checkbox-wrapper picture {
+    height: 50px;
+  }
+  
+  .team-selection .checkbox-wrapper picture img {
+    width: 100%;
+    height: 100%;
+  }
+  
+}
+
+@media (max-width: 400px) {
+  .team-selection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
