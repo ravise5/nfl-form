@@ -3,7 +3,7 @@
     --label-color: #666;
     --border-color: #818a91;
     --form-error-color: #ff5f3f;
-    --button-primary-color: #5F8DDA;
+    --button-primary-color: #D50A0A;
     --button-secondary-color: #666;
     --button-primary-hover-color: #035fe6;
     --form-font-size-m: 22px;
@@ -62,11 +62,11 @@
     --form-card-border-color: #e0e0e0;
     --form-card-border-radius: 4px;
     --form-card-padding: 0.6rem 0.8rem;
-    --form-card-background: var(--background-color-primary);
+    --form-card-background: #D50A0A;
     --form-card-shadow: 0 1px 2px rgb(0 0 0 / 3%);
     --form-card-hover-shadow: 0 2px 4px rgb(0 0 0 / 6%);
     --form-card-selected-border-color: var(--button-primary-color);
-    --form-card-selected-background: #F5F9FF;
+    --form-card-selected-background: #843e3e;
     --form-card-selected-shadow: 0 0 0 1px var(--button-primary-color);
     --form-card-transition: all 0.15s ease-in-out;
 }
@@ -284,9 +284,10 @@ main .form fieldset.link .checkbox-wrapper label {
 
 main .form form fieldset.cards {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 0.75rem;
     margin-top: 0.5rem;
+    padding: 1rem;
 }
 
 main .form form fieldset.cards > .radio-wrapper,
@@ -318,6 +319,11 @@ main .form form fieldset.cards > .checkbox-wrapper > label {
     font-size: 0.95em;
 }
 
+
+main .form form fieldset.cards.field-nominee-choice > .radio-wrapper > label {
+    color: white;
+    text-align: center;
+}
 main .form form fieldset.cards > .radio-wrapper > label:hover,
 main .form form fieldset.cards > .checkbox-wrapper > label:hover {
     box-shadow: var(--form-card-hover-shadow);
@@ -792,3 +798,15 @@ main div.form-wrapper {
 main .form form select[multiple] {
     height: calc(42px + 50px);
 }
+
+main .wizard-menu-items {
+    display: none;
+}
+
+main form .field-nominee-intro-text p {
+    font-size: 32px;
+}
+
+/* main form fieldset .field-nominee-choice .radio-wrapper > label{
+    background: #D50A0A;
+} */
