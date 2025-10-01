@@ -133,11 +133,11 @@ main .form form .field-invalid .field-description {
 /**
  * Required field indicator
  */
- [data-required="true"] > label::after {
+ /* [data-required="true"] > label::after {
     content: "*";
     color: var(--form-error-color);
     padding-inline-start: 5px;
-  }
+  } */
 
   /**
    * Required field indicator not required for checkboxes and radio buttons
