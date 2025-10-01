@@ -549,9 +549,9 @@ main .form form .wizard  {
   padding: 20px var(--form-wizard-padding);
 }
 
-main .form form .wizard > fieldset > legend{
+/* main .form form .wizard > fieldset > legend{
     display: none;
-}
+} */
 
 main .form form .wizard > fieldset:not(.current-wizard-step){
     display: none;
@@ -810,3 +810,41 @@ main form .field-nominee-intro-text p {
 /* main form fieldset .field-nominee-choice .radio-wrapper > label{
     background: #D50A0A;
 } */
+
+main form fieldset.field-nominee-selection legend,
+main form fieldset.field-thank-you-panel legend,
+main form fieldset.field-super-fan-legacy legend {
+    display: none;
+}
+
+/* Make thank you panel buttons uniform size */
+main form fieldset.field-thank-you-panel .button-wrapper {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 0.75rem;
+}
+
+main form fieldset.field-thank-you-panel .button-wrapper a,
+main form fieldset.field-thank-you-panel .button-wrapper button {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    box-sizing: border-box;
+}
+
+/* Hide back button when thank you panel is current step */
+main form fieldset.field-thank-you-panel.current-wizard-step ~ * .wizard-button-prev,
+main form .wizard-button-prev:has(~ fieldset.field-thank-you-panel.current-wizard-step) {
+    display: none;
+}
+
+main .form form fieldset.field-about-yourself > legend,
+main .form form fieldset.field-name-and-birthday-panel > legend,
+main .form form fieldset.field-teamselection > legend,
+main .form form fieldset.field-super-fan-legacy  h1 {
+    font-size: 32px;
+    text-align: center;
+}
