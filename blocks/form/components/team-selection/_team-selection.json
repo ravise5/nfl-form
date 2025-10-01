@@ -100,7 +100,7 @@
             "...": "../../models/form-common/_basic-input-fields.json#/fields"
           },
           {
-            "component": "aem-content",
+            "component": "reference",
             "name": "enum",
             "label": "Options (Display Image)",
             "valueType": "string",

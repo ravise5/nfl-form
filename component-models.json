@@ -4902,7 +4902,7 @@
         ]
       },
       {
-        "component": "aem-content",
+        "component": "reference",
         "name": "enum",
         "label": "Options (Display Image)",
         "valueType": "string",
