@@ -783,6 +783,7 @@ main div.form-wrapper {
 @media (width <= 599px) {
     :root {
         --form-field-horz-gap: 10px;
+        --form-field-vert-gap: 0;
     }
 
     main .form form .wizard  {
@@ -791,6 +792,14 @@ main div.form-wrapper {
         }
 
         margin: 0;
+    }
+    main div.form-wrapper {
+        padding: 10px;
+    }
+
+    .team-selection .checkbox-wrapper {
+        min-height: 65px;
+        padding: 0px;
     }
 }
 
