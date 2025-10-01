@@ -1,5 +1,11 @@
 mountpoints:
   /:
+<<<<<<< HEAD
     url: "https://author-p130360-e1272151.adobeaemcloud.com/bin/franklin.delivery/adobe-rnd/aem-boilerplate-xwalk/main"
     type: "markup"
     suffix: ".html"
+=======
+    url: https://author-p133911-e1313536.adobeaemcloud.com/bin/franklin.delivery/ravise5/nfl-form/main
+    type: "markup"
+    suffix: ".html"
+>>>>>>> ad705b5 (adding fstab.yaml)
