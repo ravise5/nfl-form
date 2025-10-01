@@ -4902,16 +4902,19 @@
         ]
       },
       {
-        "component": "reference",
-        "name": "enumNames",
+        "component": "aem-content",
+        "name": "enum",
         "label": "Options (Display Image)",
         "valueType": "string",
         "multi": true,
-        "required": true
+        "required": true,
+        "validation": {
+          "rootPath": "/content/dam/nfl/logos"
+        }
       },
       {
         "component": "text",
-        "name": "enum",
+        "name": "enumNames",
         "label": "Options (Data Value)",
         "valueType": "string",
         "multi": true,
