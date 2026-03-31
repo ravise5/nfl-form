@@ -565,10 +565,12 @@ export default async function decorate(block) {
     if (source === 'aem' && formDef.properties && formDef.properties['fd:path']) {
       form.dataset.formpath = formDef.properties['fd:path'];
     }
-    if (form.querySelector('fieldset[name="nominee_selection_panel"]')) {
+    if (form.querySelector('fieldset[name="wizard_nominee_selection"]')) {
       loadCSS(`${window.hlx.codeBasePath}/blocks/form/nominee-selection-panel.css`);
     }
-    if (form.querySelector('fieldset[name="panel_tell_us_about_yourself"]')) {
+    if (form.querySelector(
+      'fieldset[name="panel_tell_us_about_yourself"], fieldset[name="panel_tell_us_about_duo"]',
+    )) {
       loadCSS(`${window.hlx.codeBasePath}/blocks/form/panel_tell_us_about_yourself.css`);
     }
     if (form.querySelector('fieldset[name="panel_name_and_birthday"]')) {

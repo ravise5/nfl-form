@@ -1,6 +1,6 @@
-/* Scoped to nominee selection — fieldset[name="nominee_selection_panel"] */
+/* Scoped to nominee selection — fieldset[name="wizard_nominee_selection"] */
 
-main .form form fieldset[name="nominee_selection_panel"] {
+main .form form fieldset[name="wizard_nominee_selection"] {
     background-color: #fff;
     border: none;
     border-radius: 12px;
@@ -9,61 +9,36 @@ main .form form fieldset[name="nominee_selection_panel"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1.25rem;
     grid-column: span 12;
     text-align: center;
 }
 
-/* Maps to AEM name nominee_selection_heading → class field-nominee-selection-heading */
-main .form form fieldset[name="nominee_selection_panel"] .plain-text-wrapper.field-nominee-selection-heading,
-main .form form fieldset[name="nominee_selection_panel"] [name="nominee_selection_heading"] {
-    width: 100%;
-    margin: 0;
-    text-align: center;
-}
-
-main .form form fieldset[name="nominee_selection_panel"] .plain-text-wrapper.field-nominee-selection-heading p,
-main .form form fieldset[name="nominee_selection_panel"] [name="nominee_selection_heading"] p {
-    margin: 0 0 0.75rem;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    font-weight: 800;
-    line-height: 1.2;
-    color: #000;
-    text-align: center;
-}
-
 /* Panel legend / description (when present on outer fieldset) */
-main .form form fieldset[name="nominee_selection_panel"] > legend.field-label {
-    float: none;
-    width: 100%;
-    padding: 0;
-    margin: 0 0 0.35rem;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    font-weight: 800;
-    line-height: 1.2;
-    color: #000;
-    border: none;
-    text-align: center;
-}
+    main .form form fieldset[name="wizard_nominee_selection"] > legend.field-label {
+        float: none;
+        width: 100%;
+        padding: 0;
+        margin: 0 0 0.75rem;
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-weight: 800;
+        line-height: 1.2;
+        color: #000;
+        border: none;
+        text-align: center;
+    }
 
-main .form form fieldset[name="nominee_selection_panel"] > .field-description {
-    margin: 0 0 0.5rem;
-    padding: 0;
-    font-size: var(--form-font-size-xs, 1rem);
-    font-weight: 400;
-    color: #666;
-    line-height: 1.4;
-    text-align: center;
-    width: 100%;
-}
 
-/* Nested choice group (e.g. name="nominee_type") */
-main .form form fieldset[name="nominee_selection_panel"] fieldset.cards {
+/*
+ * Choice group: AEM often uses checkbox-group-wrapper / radio-group-wrapper without .cards.
+ * flex + gap must live on that fieldset or options stay flush (margin: 0 auto kills vertical margin).
+ */
+main .form form fieldset[name="wizard_nominee_selection"] fieldset:is(.checkbox-group-wrapper, .radio-group-wrapper, .cards) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
-    margin: 0;
+    gap: 1rem;
+    margin: 0.5rem 0 0;
     padding: 0;
     border: none;
     width: 100%;
@@ -71,21 +46,22 @@ main .form form fieldset[name="nominee_selection_panel"] fieldset.cards {
     text-align: center;
 }
 
-/* One-third width, centered */
-main .form form fieldset[name="nominee_selection_panel"] .radio-wrapper,
-main .form form fieldset[name="nominee_selection_panel"] .checkbox-wrapper {
+/* One-third width, centered; do not zero out margin-block (allows gap to show as separation between rounded tiles) */
+main .form form fieldset[name="wizard_nominee_selection"] .radio-wrapper,
+main .form form fieldset[name="wizard_nominee_selection"] .checkbox-wrapper {
     display: block;
     width: 33.333%;
     max-width: 33.333%;
     min-width: 0;
-    flex: none;
-    margin: 0 auto;
+    flex: 0 0 auto;
+    margin-inline: auto;
+    margin-block: 0;
     position: relative;
     box-sizing: border-box;
 }
 
-main .form form fieldset[name="nominee_selection_panel"] .radio-wrapper > input,
-main .form form fieldset[name="nominee_selection_panel"] .checkbox-wrapper > input {
+main .form form fieldset[name="wizard_nominee_selection"] .radio-wrapper > input,
+main .form form fieldset[name="wizard_nominee_selection"] .checkbox-wrapper > input {
     position: absolute;
     opacity: 0;
     width: 0;
@@ -94,8 +70,8 @@ main .form form fieldset[name="nominee_selection_panel"] .checkbox-wrapper > inp
 }
 
 /* Red tile, white text — matches reference comp */
-main .form form fieldset[name="nominee_selection_panel"] .radio-wrapper > label.field-label,
-main .form form fieldset[name="nominee_selection_panel"] .checkbox-wrapper > label.field-label {
+main .form form fieldset[name="wizard_nominee_selection"] .radio-wrapper > label.field-label,
+main .form form fieldset[name="wizard_nominee_selection"] .checkbox-wrapper > label.field-label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,32 +92,32 @@ main .form form fieldset[name="nominee_selection_panel"] .checkbox-wrapper > lab
     transition: background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-main .form form fieldset[name="nominee_selection_panel"] .radio-wrapper > label.field-label:hover,
-main .form form fieldset[name="nominee_selection_panel"] .checkbox-wrapper > label.field-label:hover {
+main .form form fieldset[name="wizard_nominee_selection"] .radio-wrapper > label.field-label:hover,
+main .form form fieldset[name="wizard_nominee_selection"] .checkbox-wrapper > label.field-label:hover {
     background-color: #b00909;
     color: #fff;
     box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
     transform: none;
 }
 
-main .form form fieldset[name="nominee_selection_panel"] .radio-wrapper > input:focus-visible + label.field-label,
-main .form form fieldset[name="nominee_selection_panel"] .checkbox-wrapper > input:focus-visible + label.field-label {
+main .form form fieldset[name="wizard_nominee_selection"] .radio-wrapper > input:focus-visible + label.field-label,
+main .form form fieldset[name="wizard_nominee_selection"] .checkbox-wrapper > input:focus-visible + label.field-label {
     outline: 2px solid #000;
     outline-offset: 2px;
 }
 
-main .form form fieldset[name="nominee_selection_panel"] .radio-wrapper > input:checked + label.field-label,
-main .form form fieldset[name="nominee_selection_panel"] .checkbox-wrapper > input:checked + label.field-label,
-main .form form fieldset[name="nominee_selection_panel"] .radio-wrapper > input:checked ~ label.field-label,
-main .form form fieldset[name="nominee_selection_panel"] .checkbox-wrapper > input:checked ~ label.field-label {
+main .form form fieldset[name="wizard_nominee_selection"] .radio-wrapper > input:checked + label.field-label,
+main .form form fieldset[name="wizard_nominee_selection"] .checkbox-wrapper > input:checked + label.field-label,
+main .form form fieldset[name="wizard_nominee_selection"] .radio-wrapper > input:checked ~ label.field-label,
+main .form form fieldset[name="wizard_nominee_selection"] .checkbox-wrapper > input:checked ~ label.field-label {
     background-color: #9d0808;
     color: #fff;
     box-shadow: inset 0 0 0 2px rgb(0 0 0 / 15%);
     font-weight: 700;
 }
 
-main .form form fieldset[name="nominee_selection_panel"] .radio-wrapper > label.field-label::after,
-main .form form fieldset[name="nominee_selection_panel"] .checkbox-wrapper > label.field-label::after {
+main .form form fieldset[name="wizard_nominee_selection"] .radio-wrapper > label.field-label::after,
+main .form form fieldset[name="wizard_nominee_selection"] .checkbox-wrapper > label.field-label::after {
     content: none;
     display: none;
 }
