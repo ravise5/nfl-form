@@ -571,6 +571,9 @@ export default async function decorate(block) {
     if (form.querySelector('fieldset[name="panel_tell_us_about_yourself"]')) {
       loadCSS(`${window.hlx.codeBasePath}/blocks/form/panel_tell_us_about_yourself.css`);
     }
+    if (form.querySelector('fieldset[name="panel_name_and_birthday"]')) {
+      loadCSS(`${window.hlx.codeBasePath}/blocks/form/panel_name_and_birthday.css`);
+    }
     container.replaceWith(form);
   }
 }

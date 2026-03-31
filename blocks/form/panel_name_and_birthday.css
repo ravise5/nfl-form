@@ -1,0 +1,43 @@
+/*
+ * Name & birthday wizard panel — fieldset[name="panel_name_and_birthday"]
+ */
+
+
+main .form fieldset[name="panel_name_and_birthday"] > legend.field-label {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.875rem, 3.5vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #000;
+    text-align: left;
+    border: none;
+    border-bottom: none;
+    letter-spacing: -0.02em;
+}
+
+
+/* First plain-text block under legend (e.g. required copy) */
+main .form fieldset[name="panel_name_and_birthday"] > .plain-text-wrapper p {
+    margin: 0 0 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #555;
+}
+
+
+
+/* Text fields — pale blue fill */
+main .form fieldset[name="panel_name_and_birthday"] .field-wrapper:not(.checkbox-wrapper):not(.button-wrapper) input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="hidden"]):not([type="file"]),
+main .form fieldset[name="panel_name_and_birthday"] .field-wrapper:not(.checkbox-wrapper):not(.button-wrapper) textarea {
+    background-color: #f0f5ff;
+    border: 1px solid #ccc;
+    color: #000;
+    border-radius: 6px;
+    min-height: 48px;
+}
+
