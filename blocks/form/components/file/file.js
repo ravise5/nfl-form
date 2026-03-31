@@ -151,12 +151,13 @@ function fileElement(file, index) {
 function createDragAndDropArea(wrapper, field) {
   const input = wrapper.querySelector('input');
   const customButtonText = field?.properties?.['fd:buttonText'] || fileAttachmentText;
-  const customDragDropText = field?.properties?.dragDropText || '';
+  const customDragDropText = field?.properties?.dragDropText || dragDropText;
   const dragArea = `
     <div class="file-dragIcon"></div>
-    <div class="file-dragText">${customDragDropText}</div>
+   
     <button class="file-attachButton" type="button">${customButtonText}</button>
   `;
+  // <div class="file-dragText">${customDragDropText}</div>
   const dragContainer = document.createElement('div');
   if (input.title) {
     dragContainer.title = stripTags(input.title, '');
