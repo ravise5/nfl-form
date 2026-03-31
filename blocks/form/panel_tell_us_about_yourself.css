@@ -1,0 +1,105 @@
+/*
+ * Styles only for panel fieldset name="panel_tell_us_about_yourself"
+ */
+
+main .form fieldset[name="panel_tell_us_about_yourself"] {
+    align-content: start;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] > legend.field-label {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #000;
+    text-align: left;
+    border: none;
+    border-bottom: none;
+    letter-spacing: -0.02em;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] .field-wrapper:not(.checkbox-wrapper):not(.button-wrapper) input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="hidden"]):not([type="file"]),
+main .form fieldset[name="panel_tell_us_about_yourself"] .field-wrapper:not(.checkbox-wrapper):not(.button-wrapper) textarea {
+    background-color: #e8f4fc;
+    border: 1px solid #c5ccd3;
+    color: #000;
+    border-radius: 6px;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] .field-wrapper:not(.checkbox-wrapper) select {
+    background-color: #fff;
+    border: 1px solid #c5ccd3;
+    color: #000;
+    border-radius: 6px;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] .field-wrapper:not(.checkbox-wrapper) > label.field-label {
+    font-size: var(--form-font-size-xs, 1rem);
+    font-weight: 400;
+    color: #4a4a4a;
+    margin-bottom: 0.25rem;
+    text-align: left;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] > .checkbox-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin: 0 0 1rem;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] > .checkbox-wrapper input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin: 0.2rem 0 0;
+    flex-shrink: 0;
+    cursor: pointer;
+    accent-color: #0d6efd;
+    border-radius: 3px;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] > .checkbox-wrapper > label.field-label {
+    flex: 1;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #555;
+    margin: 0;
+    text-align: left;
+    flex-basis: 0;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] > .checkbox-wrapper > label.field-label a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] .field-description {
+    font-size: 0.8125rem;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] [name="preference_center_note"],
+main .form fieldset[name="panel_tell_us_about_yourself"] .plain-text-wrapper.field-preference-center-note {
+    width: 100%;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+main .form fieldset[name="panel_tell_us_about_yourself"] [name="preference_center_note"] p,
+main .form fieldset[name="panel_tell_us_about_yourself"] .plain-text-wrapper.field-preference-center-note p {
+    margin: 1.25rem 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: #666;
+    font-weight: 400;
+    text-align: center;
+}

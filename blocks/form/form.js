@@ -568,6 +568,9 @@ export default async function decorate(block) {
     if (form.querySelector('fieldset[name="nominee_selection_panel"]')) {
       loadCSS(`${window.hlx.codeBasePath}/blocks/form/nominee-selection-panel.css`);
     }
+    if (form.querySelector('fieldset[name="panel_tell_us_about_yourself"]')) {
+      loadCSS(`${window.hlx.codeBasePath}/blocks/form/panel_tell_us_about_yourself.css`);
+    }
     container.replaceWith(form);
   }
 }
