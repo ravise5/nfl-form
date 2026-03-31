@@ -1,4 +1,4 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createOptimizedPicture, loadCSS } from '../../scripts/aem.js';
 import transferRepeatableDOM, { insertAddButton, insertRemoveButton } from './components/repeat/repeat.js';
 import { emailPattern, getSubmitBaseUrl, SUBMISSION_SERVICE } from './constant.js';
 import GoogleReCaptcha from './integrations/recaptcha.js';
@@ -115,6 +115,9 @@ function createPlainText(fd) {
   }
   const wrapper = createFieldWrapper(fd);
   wrapper.id = fd.id;
+  if (fd.name) {
+    wrapper.setAttribute('name', fd.name);
+  }
   wrapper.replaceChildren(paragraph);
   return wrapper;
 }
@@ -561,6 +564,9 @@ export default async function decorate(block) {
     form.dataset.id = formDef.id;
     if (source === 'aem' && formDef.properties && formDef.properties['fd:path']) {
       form.dataset.formpath = formDef.properties['fd:path'];
+    }
+    if (form.querySelector('fieldset[name="nominee_selection_panel"]')) {
+      loadCSS(`${window.hlx.codeBasePath}/blocks/form/nominee-selection-panel.css`);
     }
     container.replaceWith(form);
   }
