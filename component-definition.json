@@ -285,7 +285,7 @@
                     "application/pdf"
                   ],
                   "buttonText": "Attach",
-                  "dragDropText": "Drag and Drop To Upload",
+                  "dragDropText": " ",
                   "type": "file"
                 }
               }

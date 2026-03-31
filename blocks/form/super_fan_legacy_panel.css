@@ -1,0 +1,99 @@
+/*
+ * Super Fan Legacy step — fieldset[name="super_fan_legacy_panel"]
+ * Legend, multiline story, word-limit hint (right), pill upload dropzone.
+ */
+
+/* Legend — large, heavy, black */
+main .form fieldset[name="super_fan_legacy_panel"] > legend.field-label {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.625rem, 3vw, 2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: #000;
+    text-align: left;
+    border: none;
+    border-bottom: none;
+    letter-spacing: -0.02em;
+}
+
+
+/* Word cap hint — under textarea, right-aligned */
+main .form fieldset[name="super_fan_legacy_panel"] .multiline-wrapper > .field-description {
+    margin-top: 0.35rem;
+    margin-bottom: 0;
+    text-align: right;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: #333;
+    font-weight: 400;
+}
+
+main .form fieldset[name="super_fan_legacy_panel"] .multiline-wrapper > .field-description p {
+    margin: 0;
+    text-align: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* ---- File upload: dashed box → pill / oval (first screenshot) ---- */
+main .form fieldset[name="super_fan_legacy_panel"] .file-wrapper .file-drag-area {
+    border: 2px solid var(--button-primary-color, #d50a0a);
+    border-radius: 999px;
+    background-color: #fff;
+    padding: 1rem 1.75rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.65rem 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+main .form fieldset[name="super_fan_legacy_panel"] .file-wrapper .file-dragIcon {
+    order: 1;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23d50a0a' d='M9 16V10H5l7-7 7 7h-4v6H9zM5 18h14v2H5z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+main .form fieldset[name="super_fan_legacy_panel"] .file-wrapper .file-attachButton {
+    order: 2;
+    flex: 0 1 auto;
+    margin: 0;
+    padding: 0.35rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    color: var(--button-primary-color, #d50a0a);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* main .form fieldset[name="super_fan_legacy_panel"] .file-wrapper .file-attachButton:hover {
+    text-decoration: underline;
+} */
+
+main .form fieldset[name="super_fan_legacy_panel"] .file-wrapper .file-drag-area.file-dragArea-active {
+    background-color: #fff8f8;
+    border-color: #b00909;
+}
+
+/* Primary actions in panel: full width, centered block matching upload width */
+main .form fieldset[name="super_fan_legacy_panel"] .file-wrapper {
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+

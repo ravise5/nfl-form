@@ -574,6 +574,9 @@ export default async function decorate(block) {
     if (form.querySelector('fieldset[name="panel_name_and_birthday"]')) {
       loadCSS(`${window.hlx.codeBasePath}/blocks/form/panel_name_and_birthday.css`);
     }
+    if (form.querySelector('fieldset[name="super_fan_legacy_panel"]')) {
+      loadCSS(`${window.hlx.codeBasePath}/blocks/form/super_fan_legacy_panel.css`);
+    }
     container.replaceWith(form);
   }
 }
