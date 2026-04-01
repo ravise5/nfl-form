@@ -196,11 +196,28 @@ export const validityKeyMsgMap = {
   valueMissing: { key: 'required' },
 };
 
+/**
+ * Value synced to the AF model / submit payload for a checkbox-group or radio-group option.
+ * Team-selection keeps DAM paths on input.value for compatibility but should expose enumNames
+ * (label text) everywhere else; the fieldset is decorated with .team-selection.
+ * @param {HTMLInputElement} input
+ * @returns {string}
+ */
+export function getGroupOptionValueForModel(input) {
+  if (input?.closest?.('.team-selection')) {
+    const wrapper = input.closest('.checkbox-wrapper');
+    const label = wrapper?.querySelector('label.field-label');
+    const fromLabel = label?.textContent?.trim();
+    if (fromLabel) return fromLabel;
+  }
+  return input.value;
+}
+
 export function getCheckboxGroupValue(name, htmlForm) {
   const val = [];
   htmlForm.querySelectorAll(`input[name="${name}"]`).forEach((x) => {
     if (x.checked) {
-      val.push(x.value);
+      val.push(getGroupOptionValueForModel(x));
     }
   });
   return val;
@@ -357,7 +374,10 @@ export function createRadioOrCheckboxUsingEnum(fd, wrapper) {
     input.id = id;
     input.dataset.fieldType = fd.fieldType;
     input.name = fd.name;
-    input.checked = Array.isArray(fd.value) ? fd.value.includes(value) : value === fd.value;
+    const isTeamSelection = fd[':type'] === 'team-selection';
+    const optionValueForModel = isTeamSelection && label ? label : value;
+    const matchesValue = (v) => (Array.isArray(fd.value) ? fd.value.includes(v) : fd.value === v);
+    input.checked = matchesValue(optionValueForModel) || (isTeamSelection && matchesValue(value));
     if ((index === 0 && type === 'radio') || type === 'checkbox') {
       input.required = fd.required;
     }

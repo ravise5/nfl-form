@@ -1,4 +1,5 @@
 import { DEFAULT_THANK_YOU_MESSAGE, getSubmitBaseUrl } from './constant.js';
+import { getGroupOptionValueForModel } from './util.js';
 
 export function submitSuccess(e, form) {
   const { payload } = e;
@@ -42,15 +43,16 @@ function generateUnique() {
 
 function getFieldValue(fe, payload) {
   if (fe.type === 'radio') {
-    return fe.form.elements[fe.name].value;
+    const checked = fe.form.querySelector(`input[type="radio"][name="${fe.name}"]:checked`);
+    return checked ? getGroupOptionValueForModel(checked) : fe.form.elements[fe.name]?.value ?? '';
   } if (fe.type === 'checkbox') {
     if (payload[fe.name]) {
       if (fe.checked) {
-        return `${payload[fe.name]},${fe.value}`;
+        return `${payload[fe.name]},${getGroupOptionValueForModel(fe)}`;
       }
       return payload[fe.name];
     } if (fe.checked) {
-      return fe.value;
+      return getGroupOptionValueForModel(fe);
     }
   } else if (fe.type !== 'file') {
     return fe.value;
