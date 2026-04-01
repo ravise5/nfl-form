@@ -24,7 +24,6 @@ import {
   createLabel,
   updateOrCreateInvalidMsg,
   getCheckboxGroupValue,
-  getGroupOptionValueForModel,
   createDropdownUsingEnum,
   createRadioOrCheckboxUsingEnum,
   fetchData,
@@ -120,10 +119,9 @@ async function fieldChanged(payload, form, generateFormRendition) {
           }
         } else if (fieldType === 'radio-group' || fieldType === 'checkbox-group') {
           field.querySelectorAll(`input[name=${name}]`).forEach((el) => {
-            const optionValue = getGroupOptionValueForModel(el);
             const exists = (Array.isArray(valueToSet)
-              && valueToSet.some((x) => compare(x, optionValue, type.replace('[]', ''))))
-              || compare(valueToSet, optionValue, type);
+              && valueToSet.some((x) => compare(x, el.value, type.replace('[]', ''))))
+              || compare(valueToSet, el.value, type);
             el.checked = exists;
           });
         } else if (fieldType === 'checkbox') {
@@ -277,7 +275,7 @@ function applyRuleEngine(htmlForm, form, captcha) {
       el.value = val;
     } else if ((field.type === 'radio' && field.dataset.fieldType === 'radio-group')) {
       const el = form.getElement(id);
-      el.value = getGroupOptionValueForModel(field);
+      el.value = value;
     } else if (field.type === 'checkbox') {
       form.getElement(id).value = checked ? value : field.dataset.uncheckedValue;
     } else if (field.type === 'file') {
